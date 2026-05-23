@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+/* ============================================
+   DESIGN SYSTEM: Cotton Candy Dreams
+   Outfit (display) + DM Sans (body)
+   ============================================ */
+
+@theme {
+  /* Primary */
+  --color-rose: oklch(75% 0.12 350);
+  --color-sky: oklch(72% 0.08 230);
+  --color-blush: oklch(88% 0.08 350);
+  --color-cloud: oklch(85% 0.06 350);
+
+  /* Supporting */
+  --color-coral: oklch(75% 0.12 45);
+  --color-mint: oklch(80% 0.08 165);
+  --color-lavender: oklch(78% 0.06 300);
+  --color-honey: oklch(85% 0.14 85);
+
+  /* Neutrals (rose-tinted) */
+  --color-ink: oklch(25% 0.02 350);
+  --color-graphite: oklch(45% 0.01 350);
+  --color-stone: oklch(65% 0.01 350);
+  --color-cream: oklch(97% 0.01 85);
+  --color-paper: oklch(99% 0.005 85);
+
+  /* Typography */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px oklch(25% 0.02 350 / 0.05);
+  --shadow-md: 0 4px 12px oklch(25% 0.02 350 / 0.08);
+  --shadow-lg: 0 8px 24px oklch(25% 0.02 350 / 0.12);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url('/cursor-default.svg') 41 28, auto;
+}
+
+a, button, [role="button"], input[type="submit"], input[type="button"], select, label[for], .cursor-pointer, [onclick], .cursor-grab, .cursor-interactive {
+  cursor: url('/cursor-pointer.svg') 17 7, pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Skip link for a11y */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: var(--space-2) var(--space-4);
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Wall texture */
+.wall-texture {
+  position: relative;
+}
+
+.wall-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  mix-blend-mode: overlay;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.33, 1, 0.68, 1),
+              box-shadow 0.15s cubic-bezier(0.33, 1, 0.68, 1);
+  min-height: 44px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-rose);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--color-rose);
+  color: var(--color-paper);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 12px oklch(75% 0.12 350 / 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--color-coral);
+  color: var(--color-paper);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-ink);
+}
+
+.btn-ghost:hover {
+  background-color: oklch(25% 0.02 350 / 0.05);
+}
+
+/* Navigation */
+.nav-bar {
+  border-radius: var(--radius-lg);
+  background: oklch(99% 0.005 85 / 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid oklch(25% 0.02 350 / 0.06);
+}
+
+/* Links with focus states */
+a:focus-visible {
+  outline: 2px solid var(--color-rose);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Cards */
+.card {
+  background: var(--color-paper);
+  border-radius: var(--radius-lg);
+  transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1),
+              box-shadow 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px oklch(25% 0.02 350 / 0.12);
+}
+
+/* Animations */
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(2deg); }
+}
+
+@keyframes float-4 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-1deg); }
+}
+
+@keyframes color-shift {
+  0% { border-color: var(--color-cloud); }
+  33% { border-color: var(--color-sky); }
+  66% { border-color: var(--color-blush); }
+  100% { border-color: var(--color-cloud); }
+}
+
+.animate-float-1 { animation: float-1 4s ease-in-out infinite; }
+.animate-float-2 { animation: float-2 4.5s ease-in-out infinite; }
+.animate-float-3 { animation: float-3 5s ease-in-out infinite; }
+.animate-float-4 { animation: float-4 3.5s ease-in-out infinite; }
+
+/* Window frame */
+.window-frame {
+  border-width: 5px;
+  border-style: solid;
+  border-radius: var(--radius-xl);
+  animation: color-shift 10s linear infinite;
+  box-shadow: 0 12px 32px oklch(25% 0.02 350 / 0.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { display: none; }
+html { scrollbar-width: none; }
+
+/* Selection */
+::selection {
+  background: oklch(75% 0.12 350 / 0.25);
+}
+
+/* Text colors as utilities */
+.text-ink { color: var(--color-ink); }
+.text-graphite { color: var(--color-graphite); }
+.text-stone { color: var(--color-stone); }
+.text-rose { color: var(--color-rose); }
+.text-sky { color: var(--color-sky); }
+.text-coral { color: var(--color-coral); }
+.text-mint { color: var(--color-mint); }
+
+/* Background utilities */
+.bg-cream { background-color: var(--color-cream); }
+.bg-paper { background-color: var(--color-paper); }
+.bg-blush { background-color: var(--color-blush); }
+.bg-rose { background-color: var(--color-rose); }
+.bg-sky { background-color: var(--color-sky); }
+.bg-coral { background-color: var(--color-coral); }
+.bg-mint { background-color: var(--color-mint); }
+.bg-honey { background-color: var(--color-honey); }
+.bg-lavender { background-color: var(--color-lavender); }
