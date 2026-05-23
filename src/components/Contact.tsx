@@ -29,7 +29,7 @@ const InstagramIcon = () => (
 const socialLinks = [
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/shalmaligaikwad/', icon: LinkedinIcon },
   { name: 'Email', url: 'mailto:shalmali2801@gmail.com', icon: MailIcon },
-  { name: 'Phone', url: 'tel:+919876543210', icon: PhoneIcon },
+  { name: 'Phone', url: 'tel:+918693090848', icon: PhoneIcon },
   { name: 'Instagram', url: 'https://www.instagram.com/meshmeadow/', icon: InstagramIcon },
 ];
 
