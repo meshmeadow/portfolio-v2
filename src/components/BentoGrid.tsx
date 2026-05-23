@@ -145,14 +145,6 @@ function BentoCard({ project, onClick }: { project: ProjectItem; onClick: () => 
   const cardRef = useRef<HTMLButtonElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const isInView = useInView(cardRef, { once: false, amount: 0.5 });
-  const heightClasses = {
-    large: 'h-[360px] md:h-[450px] xl:h-[550px] 2xl:h-[650px]',
-    'medium-large': 'h-[260px] md:h-[330px] xl:h-[400px] 2xl:h-[480px]',
-    medium: 'h-[175px] md:h-[220px] xl:h-[270px] 2xl:h-[320px]',
-    small: 'h-[175px] md:h-[220px] xl:h-[270px] 2xl:h-[320px]',
-  };
-
-  const useAspectRatio = project.aspectRatio !== undefined;
 
   useEffect(() => {
     if (project.autoPlayLottie && lottieRef.current && isInView) {
