@@ -119,10 +119,10 @@ export default function Contact() {
             className="w-full h-auto"
           />
         </div>
-        <div className="overflow-hidden py-16 md:py-20 xl:py-24 2xl:py-32 bg-sky">
+        <div className="overflow-hidden py-12 md:py-20 xl:py-24 2xl:py-32 bg-sky">
           <div
             ref={marqueeRef}
-            className="flex whitespace-nowrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-display font-semibold text-paper"
+            className="flex whitespace-nowrap text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-display font-semibold text-paper"
           >
             <span className="flex-shrink-0">{marqueeText}</span>
             <span className="flex-shrink-0">{marqueeText}</span>

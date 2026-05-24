@@ -322,10 +322,10 @@ export default function BentoGrid() {
           </motion.div>
         </div>
 
-        <div ref={containerRef} className="overflow-hidden py-4">
+        <div ref={containerRef} className="overflow-hidden py-4 px-4 md:px-6 xl:px-8 2xl:px-12">
           <motion.div
             ref={scrollRef}
-            className="flex gap-4 xl:gap-5 2xl:gap-6 px-4 md:px-6 xl:px-8 2xl:px-12 cursor-grab active:cursor-grabbing"
+            className="flex gap-4 xl:gap-5 2xl:gap-6 cursor-grab active:cursor-grabbing"
             drag="x"
             dragConstraints={dragConstraints}
             onDragStart={() => { isDragging.current = true; }}
@@ -347,7 +347,6 @@ export default function BentoGrid() {
                 </motion.div>
               );
             })}
-            <div className="flex-shrink-0 w-4 md:w-6 xl:w-8 2xl:w-12" />
           </motion.div>
         </div>
       </section>

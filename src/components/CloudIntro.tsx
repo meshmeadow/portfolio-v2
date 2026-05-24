@@ -15,7 +15,7 @@ const navItems = [
   { name: 'Projects', href: '#work' },
   { name: 'Playground', href: '#process' },
   { name: 'Contact', href: '#contact' },
-  { name: 'Resume', href: '/resume.pdf' },
+  { name: 'Resume', href: '/Shalmali_Resume.pdf' },
 ];
 
 const sunriseColors = {
@@ -133,7 +133,7 @@ export default function CloudIntro() {
         {/* VANTA CLOUDS LAYER - with window frame effect */}
         <motion.div
           style={{ padding: containerPadding }}
-          className="absolute inset-0 z-10"
+          className="absolute inset-0 z-10 overflow-hidden"
         >
           <motion.div
             style={{
@@ -208,7 +208,7 @@ export default function CloudIntro() {
             >
               <h1
                 ref={textRef}
-                className="text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[9vw] xl:text-[8vw] 2xl:text-[7vw] font-display font-semibold leading-[0.95] tracking-tight cursor-default text-paper"
+                className="text-[11vw] sm:text-[12vw] md:text-[10vw] lg:text-[9vw] xl:text-[8vw] 2xl:text-[7vw] font-display font-semibold leading-[0.95] tracking-tight cursor-default text-paper whitespace-nowrap px-4"
                 style={{ textShadow: '0 2px 20px rgba(0,0,0,0.15)' }}
                 onMouseEnter={() => {
                   if (!isAnimating) {
