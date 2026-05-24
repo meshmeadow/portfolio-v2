@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import LoadingScreen from './components/LoadingScreen';
 import CloudIntro from './components/CloudIntro';
 import MarqueeSection from './components/MarqueeSection';
@@ -32,6 +34,8 @@ function App() {
           <Contact />
         </main>
       )}
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 }
