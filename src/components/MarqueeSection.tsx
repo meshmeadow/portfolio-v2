@@ -168,6 +168,7 @@ export default function MarqueeSection() {
       isDraggingRef.current = true;
       lastMouseXRef.current = e.clientX;
       section.style.cursor = 'grabbing';
+      window.dispatchEvent(new CustomEvent('marqueeSwiped'));
     };
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -242,7 +243,7 @@ export default function MarqueeSection() {
       <section
         ref={sectionRef}
         id="work"
-        className="py-16 md:py-24 overflow-x-clip overflow-y-visible wall-texture bg-cream select-none cursor-interactive"
+        className="py-16 md:py-24 overflow-x-clip overflow-y-visible select-none cursor-interactive"
       >
         <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '0 1.5rem', marginBottom: '3rem', textAlign: 'center' }}>
           <motion.div

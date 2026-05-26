@@ -300,14 +300,8 @@ export default function BentoGrid() {
 
   return (
     <>
-      <section className="pt-16 md:pt-24 xl:pt-32 2xl:pt-40 pb-32 md:pb-40 xl:pb-48 wall-texture bg-cream relative">
-        <div
-          className="absolute bottom-0 left-0 right-0 h-32 md:h-40 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to bottom, rgba(255,252,245,0), rgba(255,252,245,1))',
-          }}
-        />
-        <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '0 1.5rem', marginBottom: '3rem', textAlign: 'center' }}>
+      <section className="pt-16 md:pt-24 xl:pt-32 2xl:pt-40 pb-32 md:pb-40 xl:pb-48 relative">
+                <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '0 1.5rem', marginBottom: '3rem', textAlign: 'center' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

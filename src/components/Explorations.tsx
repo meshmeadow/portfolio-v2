@@ -216,7 +216,7 @@ export default function Explorations() {
   const rightItems = explorations.filter((item) => item.column === 'right');
 
   return (
-    <section ref={sectionRef} id="process" className="relative min-h-[400vh] overflow-hidden bg-white">
+    <section ref={sectionRef} id="process" className="relative min-h-[400vh] overflow-hidden">
       {/* Dot field background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <DotField
@@ -269,7 +269,10 @@ export default function Explorations() {
                 style={{ top: item.top }}
               >
                 <motion.button
-                  onClick={() => setSelectedItem(item)}
+                  onClick={() => {
+                    setSelectedItem(item);
+                    window.dispatchEvent(new CustomEvent('explorationClicked'));
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 1.15 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 25 }}
@@ -310,7 +313,10 @@ export default function Explorations() {
                 style={{ top: item.top }}
               >
                 <motion.button
-                  onClick={() => setSelectedItem(item)}
+                  onClick={() => {
+                    setSelectedItem(item);
+                    window.dispatchEvent(new CustomEvent('explorationClicked'));
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 1.15 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 25 }}

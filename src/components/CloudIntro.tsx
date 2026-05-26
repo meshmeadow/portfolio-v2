@@ -33,6 +33,10 @@ const heroText = 'Making things move';
 function HotAirBalloon({ containerRef }: { containerRef: React.RefObject<HTMLDivElement | null> }) {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleDragStart = () => {
+    window.dispatchEvent(new CustomEvent('balloonDragged'));
+  };
+
   return (
     <motion.div
       className="absolute w-[100px] md:w-[140px] xl:w-[180px] 2xl:w-[200px] z-10"
@@ -44,6 +48,7 @@ function HotAirBalloon({ containerRef }: { containerRef: React.RefObject<HTMLDiv
       dragElastic={0.2}
       dragConstraints={containerRef}
       dragTransition={{ bounceStiffness: 200, bounceDamping: 20 }}
+      onDragStart={handleDragStart}
     >
       <motion.div
         animate={{
@@ -89,7 +94,7 @@ export default function CloudIntro() {
   const cloudsScale = useTransform(scrollYProgress, [0.05, 0.25], [1, 0.88]);
   const containerPadding = useTransform(scrollYProgress, [0, 0.15], [0, 32]);
   const cloudsBorderRadius = useTransform(scrollYProgress, [0, 0.15], [0, 24]);
-  const navOpacity = useTransform(scrollYProgress, [0.1, 0.18], [0, 1]);
+  const navOpacity = useTransform(scrollYProgress, [0.05, 0.1], [0, 1]);
   const heroScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.85]);
 
   useEffect(() => {
@@ -208,7 +213,7 @@ export default function CloudIntro() {
             >
               <h1
                 ref={textRef}
-                className="text-[11vw] sm:text-[12vw] md:text-[10vw] lg:text-[9vw] xl:text-[8vw] 2xl:text-[7vw] font-display font-semibold leading-[0.95] tracking-tight cursor-default text-paper whitespace-nowrap px-4"
+                className="text-[11vw] sm:text-[12vw] md:text-[10vw] lg:text-[9vw] xl:text-[8vw] 2xl:text-[7vw] font-display-hero leading-[0.95] tracking-tight cursor-default text-paper whitespace-nowrap px-4"
                 style={{ textShadow: '0 2px 20px rgba(0,0,0,0.15)' }}
                 onMouseEnter={() => {
                   if (!isAnimating) {

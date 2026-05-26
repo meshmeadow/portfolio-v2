@@ -54,7 +54,7 @@ export default function Contact() {
   const marqueeText = 'CRAFTING MOTION ✦ TELLING STORIES ✦ MAKING MAGIC ✦ '.repeat(8);
 
   return (
-    <section id="contact" className="relative bg-sky">
+    <section id="contact" className="relative z-10 bg-sky">
       {/* Scalloped top edge */}
       <div
         className="absolute top-0 left-0 right-0 w-full"
@@ -74,36 +74,27 @@ export default function Contact() {
           viewport={{ once: true }}
           className="flex flex-col items-center text-center"
         >
-          <p className="text-lg md:text-xl text-paper/70 mb-6">Hi, I'm</p>
-          <h2 className="text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-display font-semibold text-paper leading-tight">
-            Shalmali
+          <h2 className="text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-display font-semibold text-ink leading-tight">
+            Hi, I'm Shalmali
           </h2>
-          <p className="text-xl md:text-2xl text-paper/80 mt-4 leading-relaxed max-w-2xl">
+          <p className="text-xl md:text-2xl text-ink/70 mt-4 leading-relaxed max-w-2xl">
             A motion designer crafting delightful animations and micro-interactions that make digital products feel alive.
           </p>
         </motion.div>
 
         <div className="flex flex-col items-center mt-96 text-center" style={{ marginTop: '2rem' }}>
-          <h3 className="text-3xl md:text-4xl xl:text-5xl font-display font-semibold text-paper">
+          <h3 className="text-3xl md:text-4xl xl:text-5xl font-display font-semibold text-ink">
             Say Hello
           </h3>
 
-          <div className="flex items-center gap-10" style={{ marginTop: '4rem' }}>
-            {socialLinks.map((link) => {
-              const Icon = link.icon;
-              return (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target={link.url.startsWith('http') ? '_blank' : undefined}
-                  rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  aria-label={link.name}
-                  className="w-14 h-14 rounded-full bg-paper flex items-center justify-center text-sky transition-all duration-200 hover:scale-110"
-                >
-                  <Icon />
-                </a>
-              );
-            })}
+          <div className="flex items-center gap-4 md:gap-8" style={{ marginTop: '4rem' }}>
+            <a href="https://www.linkedin.com/in/shalmaligaikwad/" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl text-ink hover:opacity-70 transition-opacity">Linkedin</a>
+            <span className="text-ink/40">|</span>
+            <a href="https://www.instagram.com/meshmeadow/" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl text-ink hover:opacity-70 transition-opacity">Instagram</a>
+            <span className="text-ink/40">|</span>
+            <a href="mailto:shalmali2801@gmail.com" className="text-lg md:text-xl text-ink hover:opacity-70 transition-opacity">Email</a>
+            <span className="text-ink/40">|</span>
+            <a href="tel:+918693090848" className="text-lg md:text-xl text-ink hover:opacity-70 transition-opacity">Call</a>
           </div>
         </div>
       </div>
@@ -122,7 +113,7 @@ export default function Contact() {
         <div className="overflow-hidden py-12 md:py-20 xl:py-24 2xl:py-32 bg-sky">
           <div
             ref={marqueeRef}
-            className="flex whitespace-nowrap text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-display font-semibold text-paper"
+            className="flex whitespace-nowrap text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-display font-semibold text-ink"
           >
             <span className="flex-shrink-0">{marqueeText}</span>
             <span className="flex-shrink-0">{marqueeText}</span>
@@ -130,7 +121,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="text-center py-8 text-xs text-paper/70">
+      <div className="text-center py-8 text-xs text-ink/60">
         © 2026 Shalmali Gaikwad
       </div>
     </section>
