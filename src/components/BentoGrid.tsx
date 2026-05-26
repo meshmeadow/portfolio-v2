@@ -104,7 +104,7 @@ const projects: ProjectItem[] = [
     lottieDelay: 2500,
     borderColor: '#25CA86',
     slides: [
-      { type: 'video', src: '/projects-videos/NEW ON BISTRO/1.mp4' },
+      { type: 'video', src: '/videos/cloche.mp4' },
     ],
   },
   {
@@ -294,6 +294,7 @@ export default function BentoGrid() {
     if (!isDragging.current) {
       setCurrentSlideIndex(0);
       setSelectedProject(project);
+      window.dispatchEvent(new CustomEvent('cardClicked'));
     }
   };
 
